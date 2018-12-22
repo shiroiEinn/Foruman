@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="{{asset('js/app.js')}}"></script>
         <script src="{{asset('js/navbarActivator.js')}}"></script>
-        <link rel="stylesheet" href="{{asset('css/aacustom.css')}}">
+        <link rel="stylesheet" href="{{asset('css/custom.css')}}">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <title>{{config('app.name')}}</title>
 

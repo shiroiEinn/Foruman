@@ -1,0 +1,11 @@
+.form{
+    border: darkgrey solid 1px;
+    border-radius: 8px;
+    padding: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.title{
+    text-align: center;
+}
