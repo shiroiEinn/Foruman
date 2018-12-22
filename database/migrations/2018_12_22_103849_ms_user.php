@@ -13,7 +13,19 @@ class MsUser extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('MsUser', function(Blueprint $table){
+            $table->increments('userid');
+            $table->string('role');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('phone');
+            $table->string('address');
+            $table->integer('upvote');
+            $table->integer('downvote');
+            $table->date('dob');
+
+        });
     }
 
     /**
@@ -23,6 +35,6 @@ class MsUser extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('MsUser');
     }
 }
