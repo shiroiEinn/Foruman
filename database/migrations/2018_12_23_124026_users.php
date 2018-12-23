@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MsUser extends Migration
+class Users extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class MsUser extends Migration
      */
     public function up()
     {
-        Schema::create('MsUser', function(Blueprint $table){
+        Schema::create('users', function(Blueprint $table){
             $table->increments('userid');
             $table->string('role');
             $table->string('name');
@@ -24,10 +24,7 @@ class MsUser extends Migration
             $table->integer('upvote');
             $table->integer('downvote');
             $table->date('dob');
-
-        });
-
-        
+    });
     }
 
     /**
@@ -37,6 +34,6 @@ class MsUser extends Migration
      */
     public function down()
     {
-        Schema::drop('msuser');
+        //
     }
 }
