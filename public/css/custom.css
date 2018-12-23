@@ -9,3 +9,11 @@
 .title{
     text-align: center;
 }
+
+
+
+/* Decoration */
+
+.required{
+    color: red;
+}
