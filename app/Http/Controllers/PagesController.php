@@ -13,7 +13,6 @@ class PagesController extends Controller
 
     public function login()
     {
-        session(['nav' => 'login']);
         return view('pages.login');
     }
 
