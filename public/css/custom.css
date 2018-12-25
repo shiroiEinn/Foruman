@@ -17,3 +17,19 @@
 .required{
     color: red;
 }
+
+.forum-body{
+    margin-left: 450px;
+    margin-right: 450px;
+    text-align: justify;
+
+}
+
+.search-bar{
+    margin-bottom: 20px;
+}
+
+.text{
+    width: 100px
+}
+
