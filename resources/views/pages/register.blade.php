@@ -36,7 +36,7 @@
 
             <div class="form-group">
                 <label>Confirm Password</label><span class="required">*</span>
-                <input type="password" class="form-control" >
+                <input type="password" class="form-control" name="confirmPassword" >
             </div>
 
             <div class="form-group">

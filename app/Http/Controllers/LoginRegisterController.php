@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Validator;
 use Auth;
 
@@ -38,13 +39,24 @@ class LoginRegisterController extends Controller
 
     public function doRegister(Request  $request)
     {
+        Validator::extend('olderThan', function($attribute, $value, $minAge)
+        {
+            return (Carbon::now())->diff(Carbon::parse($value))->y >= $minAge;
+
+        });
+
         $this->validate($request,[
-            'name'      => 'required|max:255',
-            'email'     => 'required|unique:users|email',
-            'password'  => 'required|min:6',
-            'phone'     => 'required|numeric',
-            'gender'    => 'required|in:male,female',
-            'address'   => 'required|regex:/(.+)Street/i'
+            'name'              => 'required|max:255',
+            'email'             => 'required|unique:users|email',
+            'password'          => 'required|min:6',
+            'confirmPassword'   => 'required|same:password',
+            'phone'             => 'required|numeric',
+            'gender'            => 'required|in:male,female',
+            'birthdate'         => 'olderThan:12',
+            'address'           => 'required|regex:/(.+)Street/i'
+        ],[
+            'address.regex' => 'The :attribute must ended with \'Street\'.',
+            'birthdate.older_than' => 'Minimum age is 12 years old'
         ]);
 
         return redirect(route('register'));
