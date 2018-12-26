@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MsForum extends Migration
+class Mails extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class MsForum extends Migration
      */
     public function up()
     {
-        Schema::create('MsForum', function(Blueprint $table){
-            $table->increments('postid');
+        Schema::create('mails', function(Blueprint $table){
+            $table->increments('mailid');
             $table->integer('userid');
-            $table->string('postname');
-            $table->string('category');
-            $table->string('postdesc');
-            $table->string('poststatus');
-            $table->timestamp('forumcreated');
+            $table->string('role');
+            $table->string('msgsender');
+            $table->string('msgcontent');
+            $table->timestamp('mailsent');
 
         });
     }
@@ -32,6 +31,6 @@ class MsForum extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('MsForum');
+        //
     }
 }

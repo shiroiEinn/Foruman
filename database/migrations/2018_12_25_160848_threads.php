@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MsThread extends Migration
+class Threads extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class MsThread extends Migration
      */
     public function up()
     {
-        Schema::create('MsThread', function(Blueprint $table){
+        Schema::create('threads', function(Blueprint $table){
             
             $table->increments('threadid');
             $table->integer('postid');
@@ -35,6 +35,6 @@ class MsThread extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('MsThread');
+        //
     }
 }
