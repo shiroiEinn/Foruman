@@ -14,15 +14,17 @@ class UsersTablesSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'userid' => 1,
+            'id' => 1,
             'role' => 'user',
-            'name' => 'tester',
+            'username' => 'tester',
+            'gender' => 'male',
             'email' => 'tester@gmail.com',
             'password' => bcrypt('pass'),
             'phone' => '4567890678',
             'address' => 'sdfsdfsdfsfsfs',
             'upvote' => 0,
             'downvote' => 0,
+            'image_url' => 'asd.jpg',
             'dob' => Carbon::parse('2000-01-01')
 
         ]);

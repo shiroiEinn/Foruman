@@ -30,15 +30,15 @@
         {{ csrf_field() }}
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input value="{{Cookie::get('email')}}" type="email" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
             
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" name = "password" placeholder="Password">
+            <input value="{{Cookie::get('password')}}" type="password" class="form-control" name = "password" placeholder="Password">
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="rememberMe">
             <label class="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
         <button type="submit" name = "login" value = "Login" class="btn btn-primary">Login</button>

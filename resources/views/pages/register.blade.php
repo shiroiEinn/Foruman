@@ -2,7 +2,6 @@
 
 @section('content')
     
-
     <div class="form">
             <h2 class="title">Register</h2>
 

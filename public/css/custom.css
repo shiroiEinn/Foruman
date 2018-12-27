@@ -18,6 +18,8 @@
     color: red;
 }
 
+/*  */
+
 .forum-body{
     margin-left: 450px;
     margin-right: 450px;
@@ -33,3 +35,41 @@
     width: 100px
 }
 
+.checkicon {
+    color: white;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 4px;
+    width: 14px;
+    height: 14px;
+    border-bottom: solid 1px currentColor;
+    border-left: solid 1px currentColor;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+.dropdown-item{
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.circle{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.imagenavbar{
+    padding: unset;
+    display: flex;
+    align-items: center;
+}
+
+.default-font-color{
+    color:#9d9d9d;
+}
+
+
+  
+  

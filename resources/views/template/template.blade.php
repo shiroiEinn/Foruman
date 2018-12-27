@@ -11,7 +11,12 @@
         <title>{{config('app.name')}}</title>
 
     </head>
-    @include('navbar.guest-navbar');
+    @if (Auth::check())
+        @include('navbar.user-navbar');
+    @else
+        @include('navbar.guest-navbar');
+    @endif
+    
     <body>
         @yield('content');
     </body>
