@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Forums extends Migration
+class Categories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class Forums extends Migration
      */
     public function up()
     {
-        Schema::create('forums', function(Blueprint $table){
-            
+        Schema::create('categories', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('userid');
-            $table->string('postname');
-            $table->string('categoryid');
-            $table->string('postdesc')->nullable();
-            $table->string('poststatus')->default('open');
+            $table->string('categoryname');
             $table->timestamps();
 
         });

@@ -1,0 +1,65 @@
+.searchicon {
+    color: #000;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
+    border: solid 1px currentColor;
+    border-radius: 100%;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .searchicon:before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    height: 6px;
+    width: 1px;
+    background-color: currentColor;
+  }
+
+  .checkicon {
+    color: white;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 4px;
+    width: 14px;
+    height: 14px;
+    border-bottom: solid 1px currentColor;
+    border-left: solid 1px currentColor;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .plusicon {
+    color: white;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 10px;
+    width: 23px;
+    height: 20px;
+  }
+  
+  .plusicon:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background-color: currentColor;
+  }
+  
+  .plusicon:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  
+  
+  

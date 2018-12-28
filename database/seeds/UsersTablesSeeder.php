@@ -25,7 +25,9 @@ class UsersTablesSeeder extends Seeder
             'upvote' => 0,
             'downvote' => 0,
             'image_url' => 'asd.jpg',
-            'dob' => Carbon::parse('2000-01-01')
+            'dob' => Carbon::parse('2000-01-01'),
+            'created_at' => Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon::now()->toDateTimeString()
 
         ]);
     }

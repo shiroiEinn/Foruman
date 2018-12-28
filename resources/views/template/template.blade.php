@@ -8,11 +8,12 @@
         <script src="{{asset('js/navbarActivator.js')}}"></script>
         <link rel="stylesheet" href="{{asset('css/custom.css')}}">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset('css/icon.css')}}">
         <title>{{config('app.name')}}</title>
 
     </head>
     @if (Auth::check())
-        @include('navbar.user-navbar');
+        @include('navbar.user-navbar');        
     @else
         @include('navbar.guest-navbar');
     @endif

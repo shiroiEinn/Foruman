@@ -13,8 +13,10 @@
 
 
 //Route::get('/','PagesController@home')->name('home');
+Route::get('/', 'PagesController@home')->name('home');
+Route::get('/search', 'ForumController@search')->name('homesearch');
 
-Route::group(['middleware'=>['test']],function(){
+Route::group(['middleware'=>['guest']],function(){
     Route::get('/login','PagesController@login')->name('login');
     Route::post('/login/doLogin','LoginRegisterController@doLogin')->name('doLogin');
     
@@ -23,8 +25,14 @@ Route::group(['middleware'=>['test']],function(){
     Route::post('/register/doRegister','LoginRegisterController@doRegister')->name('doRegister');
 });
 
-Route::get('/login/doLogout','LoginRegisterController@logout')->name('doLogout');
+Route::group(['middleware'=>['notGuest']],function(){
+    Route::get('/login/doLogout','LoginRegisterController@logout')->name('doLogout');
+    
+    Route::get('/addForum','PagesController@addForum')->name('addForum');
+    Route::post('/doAddForum','ForumController@create')->name('doAddForum');
 
-Route::get('/', 'ForumController@index')->name('home');
+});
 
-Route::get('/search', 'ForumController@search');
+
+
+

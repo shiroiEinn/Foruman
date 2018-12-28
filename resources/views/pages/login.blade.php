@@ -4,18 +4,6 @@
     <div class = "form">   
         <h2 class = "title">Login</h2>
 
-        @if(isset(Auth::user()->email))
-            <script>window.location = {{route('home')}};
-            </script>
-
-        @endif
-
-        @if($message = Session::get('error'))
-            <div class = "alert alert-danger alert-block">
-                <button type = "button" class = "close" data-dismiss = "alert">x</button>
-                <strong>{{ $message }}
-        @endif
-
         @if(count($errors) > 0)
         <div class = "alert alert-danger">
             <ul>

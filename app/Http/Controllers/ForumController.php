@@ -4,81 +4,40 @@ namespace App\Http\Controllers;
 
 use App\Forum;
 use Illuminate\Http\Request;
+use Validator;  
+use Carbon\Carbon;
 
 class ForumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function create(Request $request)
     {
-        $forums = Forum::paginate(5);
-        return view('pages.home', compact('forums'));
+        $validation = Validator::make($request->all(),[
+            'name'      => 'required',
+            'category'  => 'required'
+        ],[
+            'category.required' => ':attribute must be selected'
+        ]);
+
+        if($validation -> fails()) {
+            return redirect()->back()->withErrors($validation);
+        }
+        
+        Forum::create([
+            'userid' => auth()->user()->id,
+            'postname' => $request->name,
+            'categoryid' => $request->category,
+            'postdesc' => $request->desc
+        ]);
+
+
+        return redirect(route('home'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Forum $forum)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Forum $forum)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Forum $forum)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Forum $forum)
     {
         //
@@ -86,19 +45,12 @@ class ForumController extends Controller
 
     public function search(Request $request){
         $search = $request->get('name');
-        $forums = Forum::where('postname', 'LIKE', '%' .$search. '%')->paginate();
+        $forums = Forum::where('postname','like','%'.$search.'%')
+                        ->orwherehas('category', function ($query) use($search){
+                            $query->where('categoryname','like','%'.$search.'%');
+                        })->paginate(5);
         $forums->appends($request->only('name'));
-
+        
         return view('pages.home', compact('forums'));
     }
-
-    // public function search(Request $request){
-    //     $search = $request->get('name');
-    //     $pets = Pet::where('name', 'LIKE', '%'.$search.'%')->paginate();
-    //     $pets->appends($request->only('name'));
-
-    //     return view('welcome', compact('pets'));
-
-    // }
-    //small guide from pert 2
 }

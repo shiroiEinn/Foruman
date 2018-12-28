@@ -27,6 +27,7 @@ class Users extends Migration
             $table->string('image_url');
             $table->date('dob');
             $table->rememberToken();
+            $table->timestamps();
     });
     }
 
