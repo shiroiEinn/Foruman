@@ -3,6 +3,9 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="/">{{config('app.name')}}</a>
       </div>
+      <div class="navbar-header">
+        <a class="small navbar-brand" href="{{route('myForum')}}">My Forum</a>
+      </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
         </ul>

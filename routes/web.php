@@ -12,9 +12,9 @@
 */
 
 
-//Route::get('/','PagesController@home')->name('home');
-Route::get('/', 'PagesController@home')->name('home');
-Route::get('/search', 'ForumController@search')->name('homesearch');
+Route::get('/','PagesController@home')->name('home');
+Route::get('/forum', 'PagesController@home');
+Route::get('/forum/search', 'ForumController@search')->name('homesearch');
 
 Route::group(['middleware'=>['guest']],function(){
     Route::get('/login','PagesController@login')->name('login');
@@ -28,9 +28,12 @@ Route::group(['middleware'=>['guest']],function(){
 Route::group(['middleware'=>['notGuest']],function(){
     Route::get('/login/doLogout','LoginRegisterController@logout')->name('doLogout');
     
-    Route::get('/addForum','PagesController@addForum')->name('addForum');
-    Route::post('/doAddForum','ForumController@create')->name('doAddForum');
-
+    Route::get('/forum/addForum','PagesController@addForum')->name('addForum');
+    Route::post('/forum/doAddForum','ForumController@create')->name('doAddForum');
+    Route::get('/forum/myForum','ForumController@myForum')->name('myForum');
+    Route::post('/forum/deleteForum','ForumController@delete')->name('deleteForum');
+    Route::get('/forum/editForum/{id}','ForumController@edit')->name('editForum');
+    Route::patch('/forum/doEditForum/{id}','ForumController@editForum')->name('doEditForum');
 });
 
 
