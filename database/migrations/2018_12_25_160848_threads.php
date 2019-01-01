@@ -15,14 +15,11 @@ class Threads extends Migration
     {
         Schema::create('threads', function(Blueprint $table){
             
-            $table->increments('threadid');
-            $table->integer('postid');
+            $table->increments('id');
+            $table->integer('forumid');
             $table->integer('userid');
-            $table->string('name');
-            $table->string('role');
-            $table->string('threadname');
-            $table->string('threaddesc');
-            $table->timestamp('mailcreated');
+            $table->string('thread');
+            $table->timestamps();
             
 
         });

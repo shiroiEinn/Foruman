@@ -17,12 +17,12 @@
         <form method = "post" action = "{{ route('doLogin') }}">
         {{ csrf_field() }}
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label >Email address</label>
             <input value="{{Cookie::get('email')}}" type="email" class="form-control" name = "email" aria-describedby="emailHelp" placeholder="Enter email">
             
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label >Password</label>
             <input value="{{Cookie::get('password')}}" type="password" class="form-control" name = "password" placeholder="Password">
         </div>
         <div class="form-check">

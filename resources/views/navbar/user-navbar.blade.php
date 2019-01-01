@@ -12,11 +12,12 @@
         <ul class="nav navbar-nav navbar-right">
             <li>
               <div class="navbar-brand imagenavbar">
-                  <img class="circle" src="images/{{Auth::user()->image_url}}" alt="">
+                  <img class="circle" src="{{asset('images/'.Auth::user()->image_url)}}" alt="">
               </div>
             </li>
             <li>
-              <div class="navbar-brand">
+              <div class="navbar-brand greeting">
+                  <div class="verysmall">welcome,</div>
                   <a class="default-font-color" href="#">{{Auth::user()->username}}</a>
               </div>
             </li>
@@ -30,6 +31,8 @@
                   <a class="dropdown-item" href="/login/doLogout">Logout</a>
                 </div>
               </div>
+            </li>
+            <li>
             </li>
           </ul>
           

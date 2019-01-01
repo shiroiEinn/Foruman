@@ -11,4 +11,14 @@ class Forum extends Model
     {
         return $this->belongsTo('App\Category','categoryid');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User','userid');
+    }
+
+    public function thread()
+    {
+        return $this->hasMany('App\User','forumid');
+    }
 }

@@ -13,7 +13,7 @@
                             </div>
                             @if($forum->poststatus == 'open')
                             <div class="col-sm-5">
-                            <form action="{{route('deleteForum')}}" method="post">
+                            <form action="{{route('deleteEditForum')}}" method="post">
                                     {{ csrf_field() }}
                                 <input type="hidden" name="id" value="{{$forum->id}}">
                                 <button type="submit" name="action" value="delete" class="btn btn-danger">Delete</button>

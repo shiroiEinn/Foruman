@@ -54,6 +54,43 @@
     align-items: center;
 }
 
+.greeting{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.searchcontainer{
+    border:unset;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbox{
+    width: calc(100% - 30px) !important;
+}
+
+.threadsearch{
+    margin-top: 50px;
+    display: flex;
+}
+
+.nothread{
+    margin-bottom: 20px;
+}
+
+.panel-thread{
+    display:flex;
+    justify-content: space-between;
+}
+
 /* Decoration */
 
 .required{
@@ -70,6 +107,10 @@
 
 .small{
     font-size: 85% !important;
+}
+
+.verysmall{
+    font-size:55% !important;
 }
 
 .btn-warning{
