@@ -17,7 +17,7 @@ Route::get('/forum', 'PagesController@home');
 Route::get('/forum/search', 'ForumController@search')->name('homesearch');
 
 Route::get('/forum/thread/{id}','ThreadController@index')->name('viewThread');
-Route::post('/forum/thread/doSearch','ThreadController@search')->name('searchThread');
+Route::post('/forum/thread/search','ThreadController@search')->name('searchThread');
 
 Route::group(['middleware'=>['guest']],function(){
     Route::get('/login','PagesController@login')->name('login');
@@ -42,6 +42,13 @@ Route::group(['middleware'=>['notGuest']],function(){
     Route::post('/forum/thread/deleteEditThread','ThreadController@delete')->name('deleteEditThread');
     Route::get('/forum/thread/editThread/{id}','ThreadController@edit')->name('editThread');
     Route::patch('/forum/thread/doEditThread/{id}','ThreadController@editThread')->name('doEditThread');
+
+    Route::get('/profile/viewProfile/{id?}','ProfileController@index')->name('viewProfile');
+    Route::get('/profile/editProfile','ProfileController@edit')->name('editProfile');
+    Route::patch('/profile/doEditProfile','ProfileController@editProfile')->name('doEditProfile');
+    Route::post('/profile/doPopularity/{id}','ProfileController@popularity')->name('popularityProfile');
+
+    Route::get('/inbox','InboxController@index')->name('viewInbox');
 });
 
 

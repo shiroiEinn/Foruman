@@ -15,7 +15,7 @@ class UsersTablesSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        foreach(range(1,3) as $index)
+        foreach(range(1,10) as $index)
         {
             $name = $faker->firstName();
             DB::table('users')->insert([
@@ -26,8 +26,6 @@ class UsersTablesSeeder extends Seeder
                 'password' => bcrypt('pass'),
                 'phone' => '4567890678',
                 'address' => $faker->address(),
-                'upvote' => 0,
-                'downvote' => 0,
                 'image_url' => 'asd.jpg',
                 'dob' => Carbon::parse('2000-01-01'),
                 'created_at' => Carbon::now()->toDateTimeString(),

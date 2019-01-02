@@ -21,7 +21,15 @@ class ThreadController extends Controller
 
     public function search(Request $request)
     {
-        return redirect(route('viewThread'));
+        $search = $request->search;
+        $forum = Forum::where('id',$request->forumid)->get();
+        $threads = Thread::where('forumid',$request->forumid)->where('thread','like','%'.$search.'%')
+            ->orwherehas('user',function($query) use($search){
+                $query->where('username','like','%'.$search.'%');
+            })->where('forumid',$request->forumid)->paginate(5);
+        $threads->appends($request->only('search'));
+           
+        return view('pages.forum.thread',compact('forum','threads'));
     }
 
     public function create(Request $request)

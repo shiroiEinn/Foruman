@@ -22,8 +22,6 @@ class Users extends Migration
             $table->string('password');
             $table->string('phone');
             $table->string('address');
-            $table->integer('upvote')->default('0');
-            $table->integer('downvote')->default('0');
             $table->string('image_url');
             $table->date('dob');
             $table->rememberToken();

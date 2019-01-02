@@ -15,11 +15,11 @@ class ForumSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-    	foreach (range(1,30) as $index) {
+    	foreach (range(1,7) as $index) {
             DB::table('forums')->insert([
                 'userid' => $faker->numberBetween(1,3),
                 'postname' => $faker->realText(20),
-                'categoryid' => $faker->numberBetween(1,4),
+                'categoryid' => $faker->numberBetween(1,3),
                 'postdesc' => $faker->realText(100),
                 'poststatus' => 'open',
                 'created_at' => Carbon::now()->toDateTimeString(),
@@ -27,7 +27,7 @@ class ForumSeeder extends Seeder
             ]);
         }
         
-        foreach (range(1,4) as $index) {
+        foreach (range(1,3) as $index) {
             DB::table('categories')->insert([
                 'categoryname' => $faker->word,
                 'created_at' => Carbon::now()->toDateTimeString(),

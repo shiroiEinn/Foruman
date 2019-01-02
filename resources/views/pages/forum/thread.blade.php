@@ -23,9 +23,10 @@
             </div>
             <div class="panel-footer">
                 {{$forum[0]->postdesc}}
-                <form action="{{route('searchThread')}}">
+                <form action="{{route('searchThread')}}" method="post">
                 {{ csrf_field() }}
                     <div class="form-group threadsearch">
+                        <input type="hidden" value="{{$forum[0]->id}}" name="forumid">
                         <input  type="text" class="form-control searchbox" name = "search" placeholder="Search...">
                         <button class="searchcontainer" type="submit"><div class="searchicon"></div></button>
                         
@@ -38,10 +39,12 @@
                 @foreach ($threads as $thread)
                     <div class="panel panel-default">
                         <div class="panel-heading panel-title panel-thread">
-                            {{$thread->user->username}} <br>
+                            <div>
+                            <span><a href="{{route('viewProfile',['id' => $thread->user->id])}}">{{$thread->user->username}}</a></span> <br>
                             {{$thread->user->role}} <br>
                             Posted at: {{$thread->created_at}} <br>
-                            @if($thread->userid == Auth::user()->id)
+                            </div>
+                            @if(Auth::check() && $thread->userid == Auth::user()->id)
                             <form action="{{route('deleteEditThread')}}" method="post">
                             {{ csrf_field() }}
                                 <div>
@@ -55,11 +58,12 @@
                         <div class="panel-footer">{{$thread->thread}}</div>
                     </div>
                 @endforeach
+                {{$threads->links()}}
           @else
             <div class="nothread">This forum doesnt have any thread</div>
           @endif
         
-
+        
           @if(Auth::check() && $forum[0]->poststatus == 'open')
           <div class="panel panel-default">
                 <div class="panel-heading panel-title">Post New Thread</div>

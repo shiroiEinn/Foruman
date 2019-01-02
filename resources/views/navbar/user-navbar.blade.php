@@ -6,6 +6,9 @@
       <div class="navbar-header">
         <a class="small navbar-brand" href="{{route('myForum')}}">My Forum</a>
       </div>
+      <div class="navbar-header">
+        <a class="small navbar-brand" href="{{route('viewInbox')}}">Inbox</a>
+      </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
         </ul>
@@ -18,16 +21,17 @@
             <li>
               <div class="navbar-brand greeting">
                   <div class="verysmall">welcome,</div>
-                  <a class="default-font-color" href="#">{{Auth::user()->username}}</a>
+                  <a class="default-font-color" href="{{route('viewProfile')}}">{{Auth::user()->username}}</a>
               </div>
             </li>
+            
             <li><div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="checkicon"></div>
                 </a>
               
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="{{route('viewProfile')}}">Profile</a>
                   <a class="dropdown-item" href="/login/doLogout">Logout</a>
                 </div>
               </div>
