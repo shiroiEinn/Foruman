@@ -6,9 +6,12 @@
       <div class="navbar-header">
         <a class="small navbar-brand" href="{{route('myForum')}}">My Forum</a>
       </div>
-      <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Master<div class="checkicon"></div>
+      <div class="dropdown show navbar-header">
+        <a class="btn btn-secondary dropdown-toggle custom-padding" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="icon-withtext">
+              <div class="small navbar-brand">Master</div>
+              <div class="small-checkicon"></div>
+            </div>
         </a>
       
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

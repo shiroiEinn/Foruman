@@ -31,6 +31,17 @@
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
+
+  .small-checkicon {
+    color: white;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-bottom: solid 1px currentColor;
+    border-left: solid 1px currentColor;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
   
   .plusicon {
     color: white;

@@ -121,6 +121,19 @@
     background-color: #e08b93 !important;
     border-color: #e08b93 !important;
 }
+
+.icon-withtext{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.custom-padding{
+    padding-left: unset !important;
+    padding-top: unset !important;
+    padding-bottom: unset !important;
+}
+
 /* Decoration */
 
 .required{
