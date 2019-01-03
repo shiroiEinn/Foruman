@@ -9,7 +9,7 @@
                         <div class="panel-heading panel-title panel-thread">
                             <div>
                                     <span><a href="{{route('viewProfile',['id' => $message->user->id])}}">{{$message->user->username}}</a></span> <br>
-                            {{$message->user->role}} <br>
+                            {{$message->user->role->role}} <br>
                             Posted at: {{$message->created_at}} <br>
                             </div>
                             <form action="{{route('deleteMessage')}}" method="post">

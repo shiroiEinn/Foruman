@@ -18,8 +18,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // public function popularity()
-    // {
-    //     return $this->hasMany('App\Popularity','senderid');
-    // }
+    public function role()
+    {
+        return $this->belongsTo('App\Role', 'roleid');
+    }
 }

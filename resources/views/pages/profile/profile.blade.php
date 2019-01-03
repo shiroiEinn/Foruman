@@ -1,7 +1,7 @@
 @extends('template.template')
 
 @section('content')
-<div class = "form form-profile">   
+<div class = "form form-bigger">   
 
         <div class="panel panel-default">
             

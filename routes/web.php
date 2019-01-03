@@ -54,7 +54,8 @@ Route::group(['middleware'=>['notGuest']],function(){
 });
 
 Route::group(['middleware'=>['admin']],function(){
-    Route::get('/master','MasterController@index')->name('viewMaster');
+    Route::get('/master/user','MasterUserController@index')->name('viewUserMaster');
+    Route::post('/master/user/editDeleteUser','MasterUserController@editDelete')->name('editDeleteUserMaster');
 });
 
 

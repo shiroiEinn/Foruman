@@ -12,9 +12,9 @@
         <title>{{config('app.name')}}</title>
 
     </head>
-    @if (Auth::check() && Auth::user()->role == 'user')
+    @if (Auth::check() && Auth::user()->role->role == 'user')
         @include('navbar.user-navbar');        
-    @elseif(Auth::check() && Auth::user()->role = 'admin')
+    @elseif(Auth::check() && Auth::user()->role->role == 'admin')
         @include('navbar.admin-navbar');
     @else
         @include('navbar.guest-navbar');

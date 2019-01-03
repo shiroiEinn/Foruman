@@ -41,7 +41,7 @@
                         <div class="panel-heading panel-title panel-thread">
                             <div>
                             <span><a href="{{route('viewProfile',['id' => $thread->user->id])}}">{{$thread->user->username}}</a></span> <br>
-                            {{$thread->user->role}} <br>
+                            {{$thread->user->role->role}} <br>
                             Posted at: {{$thread->created_at}} <br>
                             </div>
                             @if(Auth::check() && $thread->userid == Auth::user()->id)

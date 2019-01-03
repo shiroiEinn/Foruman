@@ -91,9 +91,19 @@
     justify-content: space-between;
 }
 
-.form-profile{
+.form-bigger{
     margin-left: 20vw;
     margin-right: 20vw;
+}
+
+.form-biggest{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.form-button{
+    display: flex;
+    justify-content: space-around;
 }
 
 .profile-container{
@@ -134,6 +144,12 @@
     padding-bottom: unset !important;
 }
 
+.small-imgcontainer{
+    width: 100px;
+    height: 100px;
+}
+
+
 /* Decoration */
 
 .required{
@@ -168,6 +184,11 @@
 
 .borderless{
     border: unset !important;
+}
+
+.image{
+    max-width: 100%;
+    height: auto;
 }
 
 /*  */

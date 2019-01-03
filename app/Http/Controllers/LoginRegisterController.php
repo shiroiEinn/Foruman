@@ -27,8 +27,8 @@ class LoginRegisterController extends Controller
         if(Auth::attempt($user_data)){
             if($request->rememberMe)
             {
-                Cookie::queue('email',$request->email,1);
-                Cookie::queue('password',$request->password,1);
+                Cookie::queue('email',$request->email,60);
+                Cookie::queue('password',$request->password,60);
             }
             
             
