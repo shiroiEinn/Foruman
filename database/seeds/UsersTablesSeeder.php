@@ -33,6 +33,28 @@ class UsersTablesSeeder extends Seeder
     
             ]);
         }
+
+        $faker = Faker::create();
+        foreach(range(1,3) as $index)
+        {
+            $name = $faker->firstName();
+            DB::table('users')->insert([
+                'role' => 'admin',
+                'username' => $name,
+                'gender' => 'male',
+                'email' => $name.'@gmail.com',
+                'password' => bcrypt('pass'),
+                'phone' => '4567890678',
+                'address' => $faker->address(),
+                'image_url' => 'asd.jpg',
+                'dob' => Carbon::parse('2000-01-01'),
+                'created_at' => Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon::now()->toDateTimeString()
+    
+            ]);
+        }
+
+
         
     }
 }

@@ -45,7 +45,7 @@ class LoginRegisterController extends Controller
         return redirect(route('login'));
     }
 
-    public function doRegister(Request  $request)
+    public function doRegister(Request $request)
     {
         Validator::extend('olderThan', function($attribute, $value, $minAge)
         {

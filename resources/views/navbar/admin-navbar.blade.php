@@ -15,8 +15,10 @@
         </a>
       
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="{{route('viewMaster')}}">master</a>
+          <a class="dropdown-item" href="{{route('viewMaster')}}">User List</a>
+          <a class = "dropdown-item" href = "{{route('addUser')}}">Add New User</a>
         </div>
+        
       </div>
       <div class="navbar-header">
         <a class="small navbar-brand" href="{{route('viewMessage')}}">Inbox</a>

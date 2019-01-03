@@ -55,6 +55,8 @@ Route::group(['middleware'=>['notGuest']],function(){
 
 Route::group(['middleware'=>['admin']],function(){
     Route::get('/master','MasterController@index')->name('viewMaster');
+    Route::get('/master/add', 'MasterController@registUser')->name('addUser');
+    Route::post('/master/addingUsers', 'MasterController@addUser')->name('addingUsers');
 });
 
 
