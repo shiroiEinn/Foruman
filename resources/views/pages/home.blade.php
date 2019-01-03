@@ -4,8 +4,10 @@
 <div class = "forum-body">
     <div class = "search-bar">
         <form action = "{{ route('homesearch') }}" method = "get">
-            <input type = "text" name = "name" placeholder = "Search forum by name and category" size = "60">
-            <button>Find</button>
+            <div class="form-group threadsearch">
+            <input  type="text" class="form-control searchbox" name = "name" placeholder="Search forum by name and category">
+            <button class="searchcontainer" type="submit"><div class="searchicon"></div></button>
+            </div>
         </form>
     </div>
 

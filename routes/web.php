@@ -48,7 +48,13 @@ Route::group(['middleware'=>['notGuest']],function(){
     Route::patch('/profile/doEditProfile','ProfileController@editProfile')->name('doEditProfile');
     Route::post('/profile/doPopularity/{id}','ProfileController@popularity')->name('popularityProfile');
 
-    Route::get('/inbox','InboxController@index')->name('viewInbox');
+    Route::get('/inbox','MessageController@index')->name('viewMessage');
+    Route::post('/inbox/addMessage','MessageController@addMessage')->name('addMessage');
+    Route::post('/inbox/deleteMessage','MessageController@deleteMessage')->name('deleteMessage');
+});
+
+Route::group(['middleware'=>['admin']],function(){
+    Route::get('/master','MasterController@index')->name('viewMaster');
 });
 
 

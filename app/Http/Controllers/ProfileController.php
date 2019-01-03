@@ -115,7 +115,9 @@ class ProfileController extends Controller
         }
         else 
         {
-            Popularity::where('userid',$userid)->update([
+            Popularity::where('userid',$userid)
+                ->where('senderid',auth()->user()->id)    
+                ->update([
                 'popularity' => $key[$request->action]
             ]);
         }

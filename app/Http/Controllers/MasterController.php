@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class InboxController extends Controller
+class MasterController extends Controller
 {
     public function index()
     {
-        return redirect(route('home'));
+        return view('pages.master.home');
     }
 }

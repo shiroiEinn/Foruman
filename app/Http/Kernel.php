@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
 
         'guest' => \App\Http\Middleware\CheckGuest::class,
         'notGuest' => \App\Http\Middleware\CheckNotGuest::class,
+        'admin' => \App\Http\Middleware\CheckAdmin::class,
     ];
 
     /**

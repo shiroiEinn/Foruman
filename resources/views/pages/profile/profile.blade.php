@@ -67,7 +67,7 @@
 
         @if(Auth::user()->id != $user[0]->id)
         <div class="panel panel-default">
-                <form action="{{route('addThread')}}" method="post">
+                <form action="{{route('addMessage')}}" method="post">
                     {{csrf_field()}}
                     <div class="panel-body">
                             @if(count($errors) > 0)
@@ -79,9 +79,15 @@
                                 </ul>
                             </div>
                             @endif
+                            @if(session()->has('success'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('success') }}
+                                </div>
+                            @endif
                         <div class="form-group">
                             <label >Message</label>
-                            <textarea class="form-control" rows="2" name="content"></textarea>
+                            <input type="hidden" name="id" value="{{$user[0]->id}}">
+                            <textarea class="form-control" rows="2" name="message"></textarea>
                         </div>
                         <div class="pull-right">
                             <button type="submit" class="btn btn-primary">Send</button>

@@ -9,7 +9,7 @@
                     <div class="text-center">
                         <div class="row">
                             <div class="col-sm-7">
-                                <h3 class="pull-left">{{$forum->postname}}</h3>
+                                    <a href="{{route('viewThread',['id'=>$forum->id])}}"><h3 class="pull-left">{{$forum->postname}}</h3></a>
                             </div>
                             @if($forum->poststatus == 'open')
                             <div class="col-sm-5">
