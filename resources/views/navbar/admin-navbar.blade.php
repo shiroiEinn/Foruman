@@ -1,5 +1,10 @@
 <nav class="navbar navbar-inverse">
     <div class="container">
+        <div class="pull-right small time">
+            {{Date('Y-m-d H:i:s')}}
+        </div>
+    </div>
+    <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">{{config('app.name')}}</a>
       </div>
@@ -16,8 +21,8 @@
       
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="{{route('viewUserMaster')}}">User</a>
-          <a class="dropdown-item" href="#">Forum</a>
-          <a class="dropdown-item" href="#">Category</a>
+          <a class="dropdown-item" href="{{route('viewForumMaster')}}">Forum</a>
+          <a class="dropdown-item" href="{{route('viewCategoryMaster')}}">Category</a>
         </div>
         
       </div>

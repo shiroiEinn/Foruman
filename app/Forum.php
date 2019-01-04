@@ -19,6 +19,6 @@ class Forum extends Model
 
     public function thread()
     {
-        return $this->hasMany('App\User','forumid');
+        return $this->hasMany('App\Thread','forumid');
     }
 }

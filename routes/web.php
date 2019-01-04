@@ -60,6 +60,15 @@ Route::group(['middleware'=>['admin']],function(){
     Route::post('/master/doAddUser','MasterUserController@create')->name('doAddUserMaster');
     Route::get('/master/user/editUser/{id}','MasterUserController@editUser')->name('editUserMaster');
     Route::patch('/master/user/doEditUser/{id}','MasterUserController@doEditUser')->name('doEditUserMaster');
+
+    Route::get('/master/forum','MasterForumController@index')->name('viewForumMaster');
+    Route::post('/master/forum/closeDelete/{id}','MasterForumController@closeDelete')->name('closeDeleteForumMaster');
+
+    Route::get('/master/category','MasterCategoryController@index')->name('viewCategoryMaster');
+    Route::post('/master/category/doAddCategory','MasterCategoryController@create')->name('doAddCategoryMaster');
+    Route::post('/master/category/editDeleteCategory','MasterCategoryController@editDeleteCategory')->name('editDeleteCategoryMaster');
+    Route::get('/master/category/editCategory/{id}','MasterCategoryController@editCategory')->name('editCategoryMaster');
+    Route::post('/master/category/doEditCategory/{id}','MasterCategoryController@doEditCategory')->name('doEditCategoryMaster');
 });
 
 

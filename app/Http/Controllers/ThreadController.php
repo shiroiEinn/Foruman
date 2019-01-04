@@ -72,6 +72,7 @@ class ThreadController extends Controller
 
     public function editThread(Request $request, $id)
     {
+        $threadid = $id;
         $validation = Validator::make($request->all(),[
             'content'   => 'required'
         ]);
@@ -85,6 +86,11 @@ class ThreadController extends Controller
             'thread'    => $request->content
         ]);
 
-        return redirect(route('viewThread',['id' => $id]));
+        $forum = Forum::whereHas('thread',function($query) use($threadid){
+            $query->where('id',$threadid);
+        })->get();
+
+
+        return redirect(route('viewThread',['id' => $forum[0]->id]));
     }
 }
