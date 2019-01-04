@@ -19,6 +19,7 @@
           <a class="dropdown-item" href="#">Forum</a>
           <a class="dropdown-item" href="#">Category</a>
         </div>
+        
       </div>
       <div class="navbar-header">
         <a class="small navbar-brand" href="{{route('viewMessage')}}">Inbox</a>

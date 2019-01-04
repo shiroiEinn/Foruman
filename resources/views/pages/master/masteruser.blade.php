@@ -6,7 +6,7 @@
         <div class="panel panel-heading panel-thread">
             List of User
             <div>
-                <button type="submit" class="btn btn-primary">Add new User</button>
+                <a href="{{route('addUserMaster')}}"><button type="submit" class="btn btn-primary">Add new User</button></a>
             </div>
         </div>
         <div class="panel-body">

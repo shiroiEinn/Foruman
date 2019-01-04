@@ -56,6 +56,10 @@ Route::group(['middleware'=>['notGuest']],function(){
 Route::group(['middleware'=>['admin']],function(){
     Route::get('/master/user','MasterUserController@index')->name('viewUserMaster');
     Route::post('/master/user/editDeleteUser','MasterUserController@editDelete')->name('editDeleteUserMaster');
+    Route::get('/master/addUser','MasterUserController@addUserMaster')->name('addUserMaster');
+    Route::post('/master/doAddUser','MasterUserController@create')->name('doAddUserMaster');
+    Route::get('/master/user/editUser/{id}','MasterUserController@editUser')->name('editUserMaster');
+    Route::patch('/master/user/doEditUser/{id}','MasterUserController@doEditUser')->name('doEditUserMaster');
 });
 
 
